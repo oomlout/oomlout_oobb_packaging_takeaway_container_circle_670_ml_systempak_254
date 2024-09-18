@@ -1,0 +1,6 @@
+project_id: oomlout_oobb_packaging_takeaway_container_circle_670_ml_systempak_254
+project_name: Oomlout Oobb Packaging Takeaway Container Circle 670 Ml Systempak 254
+project_repo: https://github.com/oomlout/oomlout_oobb_packaging_takeaway_container_circle_670_ml_systempak_254
+production_format:
+  oolc_1:
+    file_location: source_files/oolc_1.cdr
