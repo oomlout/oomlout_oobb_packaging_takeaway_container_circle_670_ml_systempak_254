@@ -4,3 +4,5 @@ project_repo: https://github.com/oomlout/oomlout_oobb_packaging_takeaway_contain
 production_format:
   oolc_1_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_size_test:
     file_location: source_files/oolc_1.cdr
+  oolc_2_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_3_width_3_height_holder:
+    file_location: source_files/oolc_2.cdr
