@@ -12,3 +12,13 @@
 * thickness:   
 * material:   
  
+
+### oolc_2_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_3_width_3_height_holder
+* link: [/oolc_2_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_3_width_3_height_holder](oolc_2_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_3_width_3_height_holder)  
+![](oolc_2_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_3_width_3_height_holder/working_300.png)  
+![](oolc_2_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_3_width_3_height_holder/image_300.jpg)  
+* width:   
+* height:   
+* thickness:   
+* material:   
+ 
