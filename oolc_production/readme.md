@@ -22,3 +22,13 @@
 * thickness:   
 * material:   
  
+
+### oolc_3_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_jig
+* link: [/oolc_3_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_jig](oolc_3_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_jig)  
+![](oolc_3_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_jig/working_300.png)  
+![](oolc_3_oomlout_oobb_packaging_takeaway_containercircle_670_ml_systempak_254_jig/image_300.jpg)  
+* width:   
+* height:   
+* thickness:   
+* material:   
+ 
