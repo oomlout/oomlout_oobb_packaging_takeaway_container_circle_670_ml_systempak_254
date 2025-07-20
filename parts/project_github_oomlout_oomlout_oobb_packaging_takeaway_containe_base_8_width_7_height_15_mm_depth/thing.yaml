@@ -1,0 +1,660 @@
+classification: project
+color: oomlout_oobb_packaging_takeaway_containe
+description_extra: ''
+description_main: base_8_width_7_height_15_mm_depth
+full_rotations:
+- 0
+- 0
+- 0
+full_shift:
+- 0
+- 0
+- 0
+id: project_github_oomlout_oomlout_oobb_packaging_takeaway_containe_base_8_width_7_height_15_mm_depth
+id_oobb: oobb_part_oomlout_oobb_packaging_takeaway_containe_base_8_width_7_height_15_mm_depth
+kwargs:
+  filter: ''
+  height: 7
+  modes:
+  - 3dpr
+  navigation: true
+  oomp_classification: project
+  oomp_color: oomlout_oobb_packaging_takeaway_containe
+  oomp_description_extra: ''
+  oomp_description_main: base_8_width_7_height_15_mm_depth
+  oomp_manufacturer: ''
+  oomp_mode: project
+  oomp_part_number: ''
+  oomp_run: true
+  oomp_size: oomlout
+  oomp_type: github
+  overwrite: true
+  thickness: 15
+  typ: all
+  type: oomlout_oobb_packaging_takeaway_containe_base
+  width: 8
+manufacturer: ''
+name: base
+part_number: ''
+project_name: C:\gh\oomlout_oobb_packaging_takeaway_container_circle_670_ml_systempak_254
+size: oomlout
+thing:
+  classification: oobb
+  color: ''
+  components:
+  - - depth: 15
+      height: 7
+      pos:
+      - 0
+      - 0
+      - 0
+      shape: rounded_rectangle
+      size:
+      - 119
+      - 104
+      - 15
+      type: positive
+      width: 8
+  - - h: 250
+      height: 15
+      inclusion: laser
+      pos: &id001
+      - 0
+      - 0
+      - -125.0
+      r: 47.5
+      radius: 47.5
+      shape: cylinder
+      type: negative
+      width: 8
+    - h: 250
+      height: 15
+      inclusion: 3dpr
+      pos: *id001
+      r: 47.5
+      shape: cylinder
+      type: negative
+      width: 8
+    - h: 250
+      height: 15
+      inclusion: 'true'
+      pos: *id001
+      r: 47.5
+      radius: 47.5
+      shape: cylinder
+      type: negative
+      width: 8
+  - - objects:
+      - - clearance: top
+          depth: 100
+          h: 3.75
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos:
+          - 0
+          - 0
+          - -3.75
+          r1: 2.25
+          r2: 4.875
+          shape: cylinder
+          type: positive
+          width: 8
+      - - - clearance: top
+            depth: 100
+            h: 250
+            height: 7
+            inclusion: laser
+            m: '#'
+            pos:
+            - 0
+            - 0
+            - 0.0
+            r: 4.875
+            shape: cylinder
+            type: positive
+            width: 8
+      - - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos: &id002
+          - 0
+          - 0
+          - -100.0
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos: *id002
+          r: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos: *id002
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+      - - clearance: top
+          depth: 100
+          h: 4.2
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos:
+          - 0
+          - 0
+          - -4.2
+          r1: 2.75
+          r2: 5.5
+          shape: cylinder
+          type: positive
+          width: 8
+      - - - clearance: top
+            depth: 100
+            h: 250
+            height: 7
+            inclusion: 3dpr
+            m: '#'
+            pos:
+            - 0
+            - 0
+            - 0.0
+            r: 5.5
+            shape: cylinder
+            type: positive
+            width: 8
+      - - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos: &id003
+          - 0
+          - 0
+          - -100.0
+          r: 2.75
+          radius: 2.75
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos: *id003
+          r: 2.75
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos: *id003
+          r: 2.75
+          radius: 2.75
+          shape: cylinder
+          type: positive
+          width: 8
+      - - clearance: top
+          depth: 100
+          h: 3.75
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos:
+          - 0
+          - 0
+          - -3.75
+          r1: 2.25
+          r2: 4.875
+          shape: cylinder
+          type: positive
+          width: 8
+      - - - clearance: top
+            depth: 100
+            h: 250
+            height: 7
+            inclusion: 'true'
+            m: '#'
+            pos:
+            - 0
+            - 0
+            - 0.0
+            r: 4.875
+            shape: cylinder
+            type: positive
+            width: 8
+      - - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos: &id004
+          - 0
+          - 0
+          - -100.0
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos: *id004
+          r: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos: *id004
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+      pos:
+      - -52.5
+      - -35.0
+      - 7.5
+      rot:
+      - 90
+      - 0
+      - 0
+      type: rotation
+      typetype: negative
+  - - objects:
+      - - clearance: top
+          depth: 100
+          h: 3.75
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos:
+          - 0
+          - 0
+          - -3.75
+          r1: 2.25
+          r2: 4.875
+          shape: cylinder
+          type: positive
+          width: 8
+      - - - clearance: top
+            depth: 100
+            h: 250
+            height: 7
+            inclusion: laser
+            m: '#'
+            pos:
+            - 0
+            - 0
+            - 0.0
+            r: 4.875
+            shape: cylinder
+            type: positive
+            width: 8
+      - - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos: &id005
+          - 0
+          - 0
+          - -100.0
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos: *id005
+          r: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos: *id005
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+      - - clearance: top
+          depth: 100
+          h: 4.2
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos:
+          - 0
+          - 0
+          - -4.2
+          r1: 2.75
+          r2: 5.5
+          shape: cylinder
+          type: positive
+          width: 8
+      - - - clearance: top
+            depth: 100
+            h: 250
+            height: 7
+            inclusion: 3dpr
+            m: '#'
+            pos:
+            - 0
+            - 0
+            - 0.0
+            r: 5.5
+            shape: cylinder
+            type: positive
+            width: 8
+      - - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos: &id006
+          - 0
+          - 0
+          - -100.0
+          r: 2.75
+          radius: 2.75
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos: *id006
+          r: 2.75
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos: *id006
+          r: 2.75
+          radius: 2.75
+          shape: cylinder
+          type: positive
+          width: 8
+      - - clearance: top
+          depth: 100
+          h: 3.75
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos:
+          - 0
+          - 0
+          - -3.75
+          r1: 2.25
+          r2: 4.875
+          shape: cylinder
+          type: positive
+          width: 8
+      - - - clearance: top
+            depth: 100
+            h: 250
+            height: 7
+            inclusion: 'true'
+            m: '#'
+            pos:
+            - 0
+            - 0
+            - 0.0
+            r: 4.875
+            shape: cylinder
+            type: positive
+            width: 8
+      - - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: laser
+          m: '#'
+          pos: &id007
+          - 0
+          - 0
+          - -100.0
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 3dpr
+          m: '#'
+          pos: *id007
+          r: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+        - clearance: top
+          depth: 100
+          h: 100
+          height: 7
+          inclusion: 'true'
+          m: '#'
+          pos: *id007
+          r: 2.25
+          radius: 2.25
+          shape: cylinder
+          type: positive
+          width: 8
+      pos:
+      - 52.5
+      - -35.0
+      - 7.5
+      rot:
+      - 90
+      - 0
+      - 0
+      type: rotation
+      typetype: negative
+  components_objects:
+  - depth: 15
+    filter: ''
+    height: 7
+    modes:
+    - 3dpr
+    navigation: true
+    oomp_classification: project
+    oomp_color: oomlout_oobb_packaging_takeaway_containe
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: true
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: oobb_plate
+    thickness: 15
+    typ: all
+    type: positive
+    width: 8
+  - filter: ''
+    height: 15
+    modes:
+    - 3dpr
+    navigation: true
+    oomp_classification: project
+    oomp_color: oomlout_oobb_packaging_takeaway_containe
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: true
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    radius: 47.5
+    save_type: all
+    shape: oobb_cylinder
+    thickness: 15
+    typ: all
+    type: negative
+    width: 8
+  - clearance: top
+    depth: 100
+    filter: ''
+    height: 7
+    m: '#'
+    modes:
+    - 3dpr
+    navigation: true
+    oomp_classification: project
+    oomp_color: oomlout_oobb_packaging_takeaway_containe
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: true
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - -52.5
+    - -35.0
+    - 7.5
+    radius_name: m5_screw_wood
+    rot:
+    - 90
+    - 0
+    - 0
+    save_type: all
+    shape: oobb_screw_countersunk
+    thickness: 15
+    typ: all
+    type: negative
+    width: 8
+  - clearance: top
+    depth: 100
+    filter: ''
+    height: 7
+    m: '#'
+    modes:
+    - 3dpr
+    navigation: true
+    oomp_classification: project
+    oomp_color: oomlout_oobb_packaging_takeaway_containe
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: true
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - 52.5
+    - -35.0
+    - 7.5
+    radius_name: m5_screw_wood
+    rot:
+    - 90
+    - 0
+    - 0
+    save_type: all
+    shape: oobb_screw_countersunk
+    thickness: 15
+    typ: all
+    type: negative
+    width: 8
+  components_string:
+  - oobb_plate_shape_positive_type_15_depth_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_8_width_7_height_15_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_packaging_takeaway_containe_oomp_color
+  - oobb_cylinder_shape_negative_type_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_8_width_15_height_15_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_packaging_takeaway_containe_oomp_color_47.5_radius
+  - oobb_screw_countersunk_shape_negative_type_m5_screw_wood_radius_name_100_depth_-52.5_-35.0_7.5_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_8_width_7_height_15_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_packaging_takeaway_containe_oomp_color_top_clearance_90_0_0_rot
+  - oobb_screw_countersunk_shape_negative_type_m5_screw_wood_radius_name_100_depth_52.5_-35.0_7.5_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_8_width_7_height_15_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_packaging_takeaway_containe_oomp_color_top_clearance_90_0_0_rot
+  description: oomlout oobb packaging takeaway containe base 8x7x15
+  description_extra: ''
+  description_main: 8_width_7_height_15_mm_depth
+  folder: C:\gh\oomlout_oobb_version_4_generated_parts\parts\oobb_part_oomlout_oobb_packaging_takeaway_containe_base_8_width_7_height_15_mm_depth
+  height: 7
+  height_mm: 104
+  id: oobb_part_oomlout_oobb_packaging_takeaway_containe_base_8_width_7_height_15_mm_depth
+  link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/oomlout_oobb_packaging_takeaway_containe_base/8_width_7_height_15_mm_depth/part
+  link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_oomlout_oobb_packaging_takeaway_containe_base_08_07_15
+  manufacturer: ''
+  name: Oobb Part Oomlout Oobb Packaging Takeaway Containe Base 8 Width 7 Height 15
+    mm Depth
+  name_short: Oomlout Oobb Packaging Takeaway
+  part_number: ''
+  short_name: ''
+  size: oomlout_oobb_packaging_takeaway_containe_base
+  thickness: 15
+  thickness_mm: 15
+  type: part
+  width: 8
+  width_mm: 119
+type: github

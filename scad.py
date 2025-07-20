@@ -2,6 +2,9 @@ import copy
 import opsc
 import oobb
 import oobb_base
+import yaml
+import os
+import scad_help
 
 def main(**kwargs):
     make_scad(**kwargs)
@@ -9,27 +12,63 @@ def main(**kwargs):
 def make_scad(**kwargs):
     parts = []
 
-    # save_type variables
-    if True:
+    typ = kwargs.get("typ", "")
+
+    if typ == "":
+        #setup    
+        #typ = "all"
+        typ = "fast"
+        #typ = "manual"
+
+    oomp_mode = "project"
+    #oomp_mode = "oobb"
+
+    test = False
+    #test = True
+
+    if typ == "all":
+        filter = ""; save_type = "all"; navigation = True; overwrite = True; modes = ["3dpr"]; oomp_run = True; test = False
+        #default
+        #filter = ""; save_type = "all"; navigation = True; overwrite = True; modes = ["3dpr"]; oomp_run = True; test = False
+    elif typ == "fast":
+        filter = ""; save_type = "none"; navigation = False; overwrite = True; modes = ["3dpr"]; oomp_run = False
+        #default
+        #filter = ""; save_type = "none"; navigation = False; overwrite = True; modes = ["3dpr"]; oomp_run = False
+    elif typ == "manual":
+    #filter
         filter = ""
         #filter = "test"
 
-        kwargs["save_type"] = "none"
-        #kwargs["save_type"] = "all"
+    #save_type
+        save_type = "none"
+        #save_type = "all"
         
-        kwargs["overwrite"] = True
-        
-        #kwargs["modes"] = ["3dpr", "laser", "true"]
-        kwargs["modes"] = ["3dpr"]
-        #kwargs["modes"] = ["laser"]
+    #navigation        
+        #navigation = False
+        navigation = True    
 
-    # default variables
-    if True:
-        kwargs["size"] = "oobb"
-        kwargs["width"] = 1
-        kwargs["height"] = 1
-        kwargs["thickness"] = 3
-        
+    #overwrite
+        overwrite = True
+                
+    #modes
+        #modes = ["3dpr", "laser", "true"]
+        modes = ["3dpr"]
+        #modes = ["laser"]    
+
+    #oomp_run
+        oomp_run = True
+        #oomp_run = False    
+
+    #adding to kwargs
+    kwargs["filter"] = filter
+    kwargs["save_type"] = save_type
+    kwargs["navigation"] = navigation
+    kwargs["overwrite"] = overwrite
+    kwargs["modes"] = modes
+    kwargs["oomp_mode"] = oomp_mode
+    kwargs["oomp_run"] = oomp_run
+    
+       
     # project_variables
     if True:
         pass
@@ -37,49 +76,102 @@ def make_scad(**kwargs):
     # declare parts
     if True:
 
+        directory_name = os.path.dirname(__file__) 
+        directory_name = directory_name.replace("/", "\\")
+        project_name = directory_name.split("\\")[-1]
+        #max 60 characters
+        length_max = 40
+        if len(project_name) > length_max:
+            project_name = project_name[:length_max]
+            #if ends with a _ remove it 
+            if project_name[-1] == "_":
+                project_name = project_name[:-1]
+                
+        #defaults
+        kwargs["size"] = "oobb"
+        kwargs["width"] = 1
+        kwargs["height"] = 1
+        kwargs["thickness"] = 3
+        #oomp_bits
+        if oomp_mode == "project":
+            kwargs["oomp_classification"] = "project"
+            kwargs["oomp_type"] = "github"
+            kwargs["oomp_size"] = "oomlout"
+            kwargs["oomp_color"] = project_name
+            kwargs["oomp_description_main"] = ""
+            kwargs["oomp_description_extra"] = ""
+            kwargs["oomp_manufacturer"] = ""
+            kwargs["oomp_part_number"] = ""
+        elif oomp_mode == "oobb":
+            kwargs["oomp_classification"] = "oobb"
+            kwargs["oomp_type"] = "part"
+            kwargs["oomp_size"] = ""
+            kwargs["oomp_color"] = ""
+            kwargs["oomp_description_main"] = ""
+            kwargs["oomp_description_extra"] = ""
+            kwargs["oomp_manufacturer"] = ""
+            kwargs["oomp_part_number"] = ""
+
         part_default = {} 
-        part_default["project_name"] = "test" ####### neeeds setting
+       
+        part_default["project_name"] = project_name
         part_default["full_shift"] = [0, 0, 0]
         part_default["full_rotations"] = [0, 0, 0]
         
         part = copy.deepcopy(part_default)
         p3 = copy.deepcopy(kwargs)
-        #p3["thickness"] = 6
+        p3["width"] = 8
+        p3["height"] = 7
+        p3["thickness"] = 15
+        #p3["extra"] = ""
         part["kwargs"] = p3
-        part["name"] = "base"
-        parts.append(part)
+        nam = "base"
+        part["name"] = nam
+        if oomp_mode == "oobb":
+            p3["oomp_size"] = nam
+        if not test:
+            pass
+            parts.append(part)
 
+
+    kwargs["parts"] = parts
+
+    scad_help.make_parts(**kwargs)
+
+    #generate navigation
+    if navigation:
+        sort = []
+        #sort.append("extra")
+        sort.append("name")
+        sort.append("width")
+        sort.append("height")
+        sort.append("thickness")
         
-    #make the parts
-    if True:
-        for part in parts:
-            name = part.get("name", "default")
-            if filter in name:
-                print(f"making {part['name']}")
-                make_scad_generic(part)            
-                print(f"done {part['name']}")
-            else:
-                print(f"skipping {part['name']}")
+        scad_help.generate_navigation(sort = sort)
+
 
 def get_base(thing, **kwargs):
 
-    depth = kwargs.get("thickness", 4)
     prepare_print = kwargs.get("prepare_print", False)
-
+    width = kwargs.get("width", 1)
+    height = kwargs.get("height", 1)
+    depth = kwargs.get("thickness", 3)                    
+    rot = kwargs.get("rot", [0, 0, 0])
     pos = kwargs.get("pos", [0, 0, 0])
-    #pos = copy.deepcopy(pos)
-    #pos[2] += -20
-
+    extra = kwargs.get("extra", "")
+    
     #add plate
     p3 = copy.deepcopy(kwargs)
-    p3["type"] = "p"
+    p3["type"] = "positive"
     p3["shape"] = f"oobb_plate"    
     p3["depth"] = depth
+    #p3["holes"] = True         uncomment to include default holes
     #p3["m"] = "#"
     pos1 = copy.deepcopy(pos)         
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
-    #add holes
+    
+    #add holes seperate
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "p"
     p3["shape"] = f"oobb_holes"
@@ -89,7 +181,47 @@ def get_base(thing, **kwargs):
     #p3["m"] = "#"
     pos1 = copy.deepcopy(pos)         
     p3["pos"] = pos1
-    oobb_base.append_full(thing,**p3)
+    #oobb_base.append_full(thing,**p3)
+
+    #add 95 mm oobb_cylinder
+    if True:
+        p3 = copy.deepcopy(kwargs)
+        p3["type"] = "negative"
+        p3["shape"] = f"oobb_cylinder"
+        p3["radius"] = 95/2
+        p3["height"] = depth
+        #p3["m"] = "#"
+        pos1 = copy.deepcopy(pos)         
+        p3["pos"] = pos1
+        oobb_base.append_full(thing,**p3)
+
+    #add two oobb_screw_countersunk radius_name m5_screw_wood 100 mm depth clearance "top"
+    if True:
+        p3 = copy.deepcopy(kwargs)
+        p3["type"] = "negative"
+        p3["shape"] = f"oobb_screw_countersunk"
+        p3["radius_name"] = "m5_screw_wood"
+        dep = 100
+        p3["depth"] = dep
+        p3["clearance"] = "top"
+        p3["m"] = "#"
+        pos1 = copy.deepcopy(pos)        
+        pos1[0] += 0
+        pos1[1] += -dep/2 + 15
+        pos1[2] += depth/2 
+        poss = []
+        shift_y = (width-1)/2 *15
+        pos11 = copy.deepcopy(pos1)
+        pos11[0] += -shift_y
+        poss.append(pos11)
+        pos12 = copy.deepcopy(pos1)
+        pos12[0] += shift_y
+        poss.append(pos12)
+        p3["pos"] = poss
+        rot1 = copy.deepcopy(rot)
+        rot1[0] += 90
+        p3["rot"] = rot1
+        oobb_base.append_full(thing,**p3)
 
     if prepare_print:
         #put into a rotation object
@@ -110,53 +242,14 @@ def get_base(thing, **kwargs):
         p3 = copy.deepcopy(kwargs)
         p3["type"] = "n"
         p3["shape"] = f"oobb_slice"
+        pos1 = copy.deepcopy(pos)
+        pos1[0] += -500/2
+        pos1[1] += 0
+        pos1[2] += -500/2        
+        p3["pos"] = pos1
         #p3["m"] = "#"
         oobb_base.append_full(thing,**p3)
     
-###### utilities
-
-
-
-def make_scad_generic(part):
-    
-    # fetching variables
-    name = part.get("name", "default")
-    project_name = part.get("project_name", "default")
-    
-    kwargs = part.get("kwargs", {})    
-    
-    modes = kwargs.get("modes", ["3dpr", "laser", "true"])
-    save_type = kwargs.get("save_type", "all")
-    overwrite = kwargs.get("overwrite", True)
-
-    kwargs["type"] = f"{project_name}_{name}"
-
-    thing = oobb_base.get_default_thing(**kwargs)
-    kwargs.pop("size","")
-
-    #get the part from the function get_{name}"
-    func = globals()[f"get_{name}"]    
-    # test if func exists
-    if callable(func):            
-        func(thing, **kwargs)        
-    else:            
-        get_base(thing, **kwargs)   
-    
-
-    for mode in modes:
-        depth = thing.get(
-            "depth_mm", thing.get("thickness_mm", 3))
-        height = thing.get("height_mm", 100)
-        layers = depth / 3
-        tilediff = height + 10
-        start = 1.5
-        if layers != 1:
-            start = 1.5 - (layers / 2)*3
-        if "bunting" in thing:
-            start = 0.5
-        opsc.opsc_make_object(f'scad_output/{thing["id"]}/{mode}.scad', thing["components"], mode=mode, save_type=save_type, overwrite=overwrite, layers=layers, tilediff=tilediff, start=start)    
-
-
 if __name__ == '__main__':
     kwargs = {}
     main(**kwargs)
